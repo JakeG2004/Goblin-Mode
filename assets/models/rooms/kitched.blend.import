@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0ultcglv64da"
-path="res://.godot/imported/bathroomcol.blend-6311ce743ddd8d50a74e339187e512eb.scn"
+uid="uid://cxfjihs82312w"
+path="res://.godot/imported/kitched.blend-688d99f038fc547b7b3533f357680f60.scn"
 
 [deps]
 
-source_file="res://assets/models/bathroomcol.blend"
-dest_files=["res://.godot/imported/bathroomcol.blend-6311ce743ddd8d50a74e339187e512eb.scn"]
+source_file="res://assets/models/rooms/kitched.blend"
+dest_files=["res://.godot/imported/kitched.blend-688d99f038fc547b7b3533f357680f60.scn"]
 
 [params]
 

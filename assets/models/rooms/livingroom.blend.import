@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b3iie1dnu1iav"
-path="res://.godot/imported/officecol.blend-0e86694649d3df2f69a0f32db2036dd9.scn"
+uid="uid://r0cxrxsbqf56"
+path="res://.godot/imported/livingroom.blend-861eaac86f5b53a41c10eea1d24fa736.scn"
 
 [deps]
 
-source_file="res://assets/models/officecol.blend"
-dest_files=["res://.godot/imported/officecol.blend-0e86694649d3df2f69a0f32db2036dd9.scn"]
+source_file="res://assets/models/rooms/livingroom.blend"
+dest_files=["res://.godot/imported/livingroom.blend-861eaac86f5b53a41c10eea1d24fa736.scn"]
 
 [params]
 

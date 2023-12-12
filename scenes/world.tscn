@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bgckad2af5suw"]
 
 [ext_resource type="PackedScene" uid="uid://d2gjaoyancc86" path="res://scenes/character.tscn" id="1_6lnwj"]
-[ext_resource type="PackedScene" uid="uid://r0cxrxsbqf56" path="res://assets/models/livingroom.blend" id="2_3r3d4"]
-[ext_resource type="PackedScene" uid="uid://dbaulka24jfjg" path="res://assets/models/hallwaycol.blend" id="3_0vuu5"]
-[ext_resource type="PackedScene" uid="uid://dbxph6opuafdb" path="res://assets/models/myrromcol.blend" id="4_ka6mi"]
-[ext_resource type="PackedScene" uid="uid://b3iie1dnu1iav" path="res://assets/models/officecol.blend" id="5_hgrbj"]
-[ext_resource type="PackedScene" uid="uid://d0ultcglv64da" path="res://assets/models/bathroomcol.blend" id="6_sw8t0"]
-[ext_resource type="PackedScene" uid="uid://d1chuwqr4enbt" path="res://assets/models/masttercol.blend" id="7_1d36s"]
-[ext_resource type="PackedScene" uid="uid://cqeamtk60lyup" path="res://assets/models/kitchencol.blend" id="8_sf7qv"]
+[ext_resource type="PackedScene" uid="uid://r0cxrxsbqf56" path="res://assets/models/rooms/livingroom.blend" id="2_3r3d4"]
+[ext_resource type="PackedScene" uid="uid://dbaulka24jfjg" path="res://assets/models/rooms/hallwaycol.blend" id="3_0vuu5"]
+[ext_resource type="PackedScene" uid="uid://dbxph6opuafdb" path="res://assets/models/rooms/myrromcol.blend" id="4_ka6mi"]
+[ext_resource type="PackedScene" uid="uid://b3iie1dnu1iav" path="res://assets/models/rooms/officecol.blend" id="5_hgrbj"]
+[ext_resource type="PackedScene" uid="uid://d0ultcglv64da" path="res://assets/models/rooms/bathroomcol.blend" id="6_sw8t0"]
+[ext_resource type="PackedScene" uid="uid://d1chuwqr4enbt" path="res://assets/models/rooms/masttercol.blend" id="7_1d36s"]
+[ext_resource type="PackedScene" uid="uid://cqeamtk60lyup" path="res://assets/models/rooms/kitchencol.blend" id="8_sf7qv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jxirr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxfjihs82312w"
-path="res://.godot/imported/kitched.blend-298242475343f2e45433361e4ac339d9.scn"
+uid="uid://dbxph6opuafdb"
+path="res://.godot/imported/myrromcol.blend-3b21f61ccc687d434cdaf86cf3709ead.scn"
 
 [deps]
 
-source_file="res://assets/models/kitched.blend"
-dest_files=["res://.godot/imported/kitched.blend-298242475343f2e45433361e4ac339d9.scn"]
+source_file="res://assets/models/rooms/myrromcol.blend"
+dest_files=["res://.godot/imported/myrromcol.blend-3b21f61ccc687d434cdaf86cf3709ead.scn"]
 
 [params]
 

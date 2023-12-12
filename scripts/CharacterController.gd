@@ -10,7 +10,8 @@ extends CharacterBody3D
 @export var mouseSensY = .15
 
 @onready var jumpStr = JUMP_VELOCITY
-@onready var cam = $Camera3D
+@onready var cam = $neck
+@onready var paw_camera = $CanvasLayer/SubViewportContainer/SubViewport/PawCamera
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -25,6 +26,9 @@ func _unhandled_input(event):
 func _ready():
 	#Get mouse to be locked to screen
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _process(_delta):
+	paw_camera.global_transform = cam.global_transform
 
 func _physics_process(delta):
 	# Add the gravity.

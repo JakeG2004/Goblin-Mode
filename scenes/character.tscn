@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2gjaoyancc86"]
+[gd_scene load_steps=4 format=3 uid="uid://d2gjaoyancc86"]
 
 [ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_5ov77"]
+[ext_resource type="PackedScene" uid="uid://ceykv6q1a00sa" path="res://scenes/cat.tscn" id="2_lhy0g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mx77"]
 
@@ -10,5 +11,30 @@ script = ExtResource("1_5ov77")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3mx77")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="neck" type="Node3D" parent="."]
+
+[node name="cat" parent="neck" instance=ExtResource("2_lhy0g")]
+transform = Transform3D(0.0180842, -0.0157835, 0.0657559, 0.0421126, 0.0558853, 0.00183239, -0.0529102, 0.039086, 0.0239332, 0.73, -1.155, -0.491)
+
+[node name="MainCamera" type="Camera3D" parent="neck"]
+cull_mask = 1048573
 near = 0.001
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="PawCamera" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+cull_mask = 2
