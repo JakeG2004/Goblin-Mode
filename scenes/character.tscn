@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2gjaoyancc86"]
+
+[ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_5ov77"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mx77"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_5ov77")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3mx77")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+near = 0.001
