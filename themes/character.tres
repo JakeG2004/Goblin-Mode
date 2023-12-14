@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bdw3qlwnwn5cn"]
+
+[ext_resource type="FontFile" uid="uid://tqahjcf7j55c" path="res://fonts/Gluten-ExtraBold.ttf" id="1_yx4g6"]
+
+[resource]
+default_font = ExtResource("1_yx4g6")
+default_font_size = 22

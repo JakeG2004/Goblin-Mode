@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds63yskbdkj17"]
+
+[ext_resource type="PackedScene" uid="uid://na6jdhrblmfm" path="res://assets/models/destructibles(GLB)/cube_broken.glb" id="1_k3tlw"]
+
+[node name="cube_broken" instance=ExtResource("1_k3tlw")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Cube_cell" parent="." index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.740389, -0.370048, -0.669409)
+
+[node name="Cube_cell_001" parent="." index="1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.680635, 0.16069, -0.028028)
+
+[node name="Cube_cell_002" parent="." index="2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0705545, 0.108166, -0.685024)
+
+[node name="Cube_cell_003" parent="." index="3"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.72157, -0.468537, -0.132053)
+
+[node name="Cube_cell_004" parent="." index="4"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.1166, -0.319118, 0.607764)
+
+[node name="Cube_cell_005" parent="." index="5"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.170054, -0.566279, -0.0989316)
+
+[node name="Cube_cell_006" parent="." index="6"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.578683, 0.0535471, 0.646718)
+
+[node name="Cube_cell_007" parent="." index="7"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.399485, 0.676314, 0.475875)
+
+[node name="Cube_cell_008" parent="." index="8"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.761878, 0.19286, -0.772814)
+
+[node name="Cube_cell_009" parent="." index="9"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.175514, 0.617905, -0.416787)
+
+[node name="Cube_cell_010" parent="." index="10"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.615013, 0.755506, -0.357541)
+
+[node name="Cube_cell_011" parent="." index="11"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.098985, 0.85567, -0.801752)
+
+[node name="Cube_cell_012" parent="." index="12"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.598315, 0.349971, -0.100902)
+
+[node name="Cube_cell_013" parent="." index="13"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.607208, -0.631166, -0.794224)
+
+[node name="Cube_cell_014" parent="." index="14"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.614624, 0.496122, -0.836636)

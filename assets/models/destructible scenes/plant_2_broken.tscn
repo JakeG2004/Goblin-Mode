@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://okclmja6xcnp"]
+
+[ext_resource type="PackedScene" uid="uid://mydw50g7sjss" path="res://assets/models/destructibles(GLB)/plant2_broken.glb" id="1_h1gr4"]
+
+[node name="plant2_broken" instance=ExtResource("1_h1gr4")]

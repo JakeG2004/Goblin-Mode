@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dem33lv3qte4t"]
+
+[ext_resource type="PackedScene" uid="uid://ctb2s676qbbsa" path="res://assets/models/destructibles(GLB)/television_broken.glb" id="1_6tkf3"]
+
+[node name="television_broken" instance=ExtResource("1_6tkf3")]

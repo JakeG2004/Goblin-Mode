@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4kbkngwkn1i"]
+
+[ext_resource type="PackedScene" uid="uid://bt27ma8b6m6wj" path="res://assets/models/destructibles(GLB)/books_broken.glb" id="1_5qok2"]
+
+[node name="books_broken" instance=ExtResource("1_5qok2")]

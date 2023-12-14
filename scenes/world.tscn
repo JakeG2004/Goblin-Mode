@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgckad2af5suw"]
+[gd_scene load_steps=27 format=3 uid="uid://bgckad2af5suw"]
 
 [ext_resource type="PackedScene" uid="uid://d2gjaoyancc86" path="res://scenes/character.tscn" id="1_6lnwj"]
+[ext_resource type="Script" path="res://scripts/gameController.gd" id="1_hx5sm"]
 [ext_resource type="PackedScene" uid="uid://r0cxrxsbqf56" path="res://assets/models/rooms/livingroom.blend" id="2_3r3d4"]
 [ext_resource type="PackedScene" uid="uid://dbaulka24jfjg" path="res://assets/models/rooms/hallwaycol.blend" id="3_0vuu5"]
 [ext_resource type="PackedScene" uid="uid://dbxph6opuafdb" path="res://assets/models/rooms/myrromcol.blend" id="4_ka6mi"]
@@ -8,6 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://d0ultcglv64da" path="res://assets/models/rooms/bathroomcol.blend" id="6_sw8t0"]
 [ext_resource type="PackedScene" uid="uid://d1chuwqr4enbt" path="res://assets/models/rooms/masttercol.blend" id="7_1d36s"]
 [ext_resource type="PackedScene" uid="uid://cqeamtk60lyup" path="res://assets/models/rooms/kitchencol.blend" id="8_sf7qv"]
+[ext_resource type="PackedScene" uid="uid://ifssfmne6ydw" path="res://assets/models/destructible scenes/pillow.tscn" id="9_e7uka"]
+[ext_resource type="PackedScene" uid="uid://dvu7jk776tw8f" path="res://assets/models/destructible scenes/television.tscn" id="10_7f3wv"]
+[ext_resource type="PackedScene" uid="uid://da3smehpyw3rp" path="res://assets/models/destructible scenes/books.tscn" id="11_5kmha"]
+[ext_resource type="PackedScene" uid="uid://drlwlrh21aauu" path="res://assets/models/destructible scenes/speaker.tscn" id="12_jqpdk"]
+[ext_resource type="PackedScene" uid="uid://cndkwbf0nq5vu" path="res://assets/models/destructible scenes/laptop.tscn" id="12_ublyv"]
+[ext_resource type="PackedScene" uid="uid://8vxd83my6k5l" path="res://assets/models/destructible scenes/radio.tscn" id="13_4od4k"]
+[ext_resource type="PackedScene" uid="uid://do20ogixickhl" path="res://assets/models/destructible scenes/speakersmall.tscn" id="15_h1snu"]
+[ext_resource type="PackedScene" uid="uid://cjtkeutap6p46" path="res://assets/models/destructible scenes/microwave.tscn" id="16_5oeau"]
+[ext_resource type="PackedScene" uid="uid://b4v6vbafwjf32" path="res://assets/models/destructible scenes/coffee.tscn" id="17_qk6cr"]
+[ext_resource type="PackedScene" uid="uid://d4megej4trbv0" path="res://assets/models/destructible scenes/plant_1.tscn" id="18_jp0rt"]
+[ext_resource type="PackedScene" uid="uid://b5hniajwup71t" path="res://assets/models/destructible scenes/plant_2.tscn" id="19_sqs44"]
+[ext_resource type="PackedScene" uid="uid://dcdbvn6tjvnfm" path="res://assets/models/destructible scenes/lamp.tscn" id="20_of55p"]
+[ext_resource type="PackedScene" uid="uid://d4ff7qqgtgddp" path="res://assets/models/destructible scenes/bigplant.tscn" id="21_hr86b"]
+[ext_resource type="AudioStream" uid="uid://wq26u20qoj8w" path="res://audio/music/convoy.mp3" id="22_cbj15"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jxirr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,11 +38,16 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_hx5sm")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_6lnwj")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2, 2.1, -2)
+transform = Transform3D(-0.02416, 0, 0.0970376, 0, 0.1, 0, -0.0970376, 0, -0.02416, 1.672, 0.197, -1.194)
 acceleration = 1
 JUMP_VELOCITY = 2.0
+
+[node name="origin" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
+top_level = true
 
 [node name="env" type="Node3D" parent="."]
 
@@ -53,3 +73,238 @@ shadow_enabled = true
 [node name="masttercol" parent="structure" instance=ExtResource("7_1d36s")]
 
 [node name="kitchencol" parent="structure" instance=ExtResource("8_sf7qv")]
+
+[node name="destructibles" type="Node3D" parent="."]
+
+[node name="livingroom" type="Node3D" parent="destructibles"]
+
+[node name="pillow" parent="destructibles/livingroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37441, 0.324496, -2.60949)
+
+[node name="pillow2" parent="destructibles/livingroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86295, 0.335675, -2.60949)
+
+[node name="pillow3" parent="destructibles/livingroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39017, 0.295323, -2.60949)
+
+[node name="pillow4" parent="destructibles/livingroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(0.747242, 0, -0.664552, 0, 1, 0, 0.664552, 0, 0.747242, 2.83691, 0.295323, -2.61997)
+
+[node name="pillow5" parent="destructibles/livingroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(0.0341495, 0, -0.999417, 0, 1, 0, 0.999417, 0, 0.0341495, 3.03511, 0.295323, -2.26004)
+
+[node name="pillow6" parent="destructibles/livingroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(0.0341495, 0, -0.999417, 0, 1, 0, 0.999417, 0, 0.0341495, 3.03511, 0.295323, -1.70405)
+
+[node name="pillow7" parent="destructibles/livingroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(0.0341495, 0, -0.999417, 0, 1, 0, 0.999417, 0, 0.0341495, 3.03511, 0.295323, -1.21141)
+
+[node name="television" parent="destructibles/livingroom" instance=ExtResource("10_7f3wv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.236449, 0.348407, -1.56736)
+
+[node name="books" parent="destructibles/livingroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.252711, 0.347308, -0.230894)
+
+[node name="books2" parent="destructibles/livingroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.295252, 0.599415, -0.70742)
+
+[node name="books3" parent="destructibles/livingroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.258214, 0.733525, -2.6299)
+
+[node name="speaker" parent="destructibles/livingroom" instance=ExtResource("12_jqpdk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.267874, 0.05, -2.0648)
+
+[node name="speaker2" parent="destructibles/livingroom" instance=ExtResource("12_jqpdk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.267874, 0.05, -0.965053)
+
+[node name="plant1" parent="destructibles/livingroom" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255536, 0.347308, -0.770857)
+
+[node name="plant2" parent="destructibles/livingroom" instance=ExtResource("19_sqs44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222866, 0.215694, -2.56941)
+
+[node name="myroom" type="Node3D" parent="destructibles"]
+
+[node name="pillow" parent="destructibles/myroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(1, 0, 0, 0, 0.0127231, -0.999919, 0, 0.999919, 0.0127231, 7.07053, 0.310325, -1.25838)
+
+[node name="pillow2" parent="destructibles/myroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(1, 0, 0, 0, 0.0127231, -0.999919, 0, 0.999919, 0.0127231, 6.84025, 0.310325, -1.25838)
+
+[node name="pillow3" parent="destructibles/myroom" instance=ExtResource("9_e7uka")]
+transform = Transform3D(1, 0, 0, 0, 0.0127231, -0.999919, 0, 0.999919, 0.0127231, 6.61004, 0.310325, -1.25838)
+
+[node name="laptop" parent="destructibles/myroom" instance=ExtResource("12_ublyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3668, 0.331208, -3.66523)
+
+[node name="books" parent="destructibles/myroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57128, 0.0700001, -3.75679)
+
+[node name="books2" parent="destructibles/myroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2351, 0.31, -3.7355)
+
+[node name="books3" parent="destructibles/myroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54439, 0.55, -3.73803)
+
+[node name="books4" parent="destructibles/myroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.33149, 0.0699999, -3.73277)
+
+[node name="books5" parent="destructibles/myroom" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.66662, 0.79, -3.76329)
+
+[node name="radio" parent="destructibles/myroom" instance=ExtResource("13_4od4k")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 7.64666, 0.330524, -1.70301)
+
+[node name="plant3" parent="destructibles/myroom" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74437, 0.31, -1.77923)
+
+[node name="plant2" parent="destructibles/myroom" instance=ExtResource("19_sqs44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50859, 0.79, -3.77653)
+
+[node name="lamp" parent="destructibles/myroom" instance=ExtResource("20_of55p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.70363, 0.31, -1.16201)
+
+[node name="bigplant3" parent="destructibles/myroom" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20411, 0.05, -1.26511)
+
+[node name="bigplant4" parent="destructibles/myroom" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78158, 0.05, -3.48351)
+
+[node name="office" type="Node3D" parent="destructibles"]
+
+[node name="pillow" parent="destructibles/office" instance=ExtResource("9_e7uka")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.21127, 0.269014, -2.4032)
+
+[node name="books" parent="destructibles/office" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 9.68738, 0.609389, -3.64746)
+
+[node name="books2" parent="destructibles/office" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 9.68738, 0.380252, -1.77815)
+
+[node name="laptop" parent="destructibles/office" instance=ExtResource("12_ublyv")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 9.54363, 0.393658, -2.62441)
+
+[node name="speakersmall" parent="destructibles/office" instance=ExtResource("15_h1snu")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 9.57904, 0.397946, -2.83346)
+
+[node name="speakersmall2" parent="destructibles/office" instance=ExtResource("15_h1snu")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 9.57904, 0.397946, -2.31199)
+
+[node name="plant6" parent="destructibles/office" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75845, 0.111144, -3.46424)
+
+[node name="lamp2" parent="destructibles/office" instance=ExtResource("20_of55p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23123, 0.326734, -2.5089)
+
+[node name="plant3" parent="destructibles/office" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74804, 0.591144, -3.26657)
+
+[node name="books5" parent="destructibles/office" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 9.69772, 0.111144, -3.29896)
+
+[node name="plant4" parent="destructibles/office" instance=ExtResource("19_sqs44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74064, 0.591144, -1.33341)
+
+[node name="plant5" parent="destructibles/office" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72357, 0.111144, -1.86375)
+
+[node name="master" type="Node3D" parent="destructibles"]
+
+[node name="pillow2" parent="destructibles/master" instance=ExtResource("9_e7uka")]
+transform = Transform3D(7.0669e-09, 0.805484, -0.592618, -9.6053e-09, 0.592618, 0.805484, 1, 0, 1.19249e-08, 9.46608, 0.32422, 1.65896)
+
+[node name="pillow3" parent="destructibles/master" instance=ExtResource("9_e7uka")]
+transform = Transform3D(7.0669e-09, 0.805484, -0.592618, -9.6053e-09, 0.592618, 0.805484, 1, 0, 1.19249e-08, 9.46608, 0.32422, 2.05899)
+
+[node name="television" parent="destructibles/master" instance=ExtResource("10_7f3wv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.29731, 0.347328, 1.58355)
+
+[node name="plant8" parent="destructibles/master" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.27676, 0.784172, 0.346901)
+
+[node name="plant2" parent="destructibles/master" instance=ExtResource("19_sqs44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.76311, 0.31, 3.04441)
+
+[node name="lamp" parent="destructibles/master" instance=ExtResource("20_of55p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.70798, 0.31, 1.26829)
+
+[node name="radio" parent="destructibles/master" instance=ExtResource("13_4od4k")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 9.66279, 0.323056, 0.655763)
+
+[node name="books" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49049, 0.31, 0.315249)
+
+[node name="books2" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.14809, 0.0699999, 0.310416)
+
+[node name="books3" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.41117, 0.55, 3.62513)
+
+[node name="books4" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.72721, 0.323873, 3.62513)
+
+[node name="plant1" parent="destructibles/master" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25814, 0.55, 2.84979)
+
+[node name="plant3" parent="destructibles/master" instance=ExtResource("19_sqs44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25197, 0.31, 2.31468)
+
+[node name="books6" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.30565, 0.0700001, 2.74441)
+
+[node name="books7" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.30565, 0.0700001, 0.784268)
+
+[node name="books8" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.30565, 0.31621, 0.426812)
+
+[node name="books9" parent="destructibles/master" instance=ExtResource("11_5kmha")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.30565, 0.798979, 2.47958)
+
+[node name="speakersmall" parent="destructibles/master" instance=ExtResource("15_h1snu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.31262, 0.80186, 2.71874)
+
+[node name="speakersmall2" parent="destructibles/master" instance=ExtResource("15_h1snu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.31262, 0.80186, 0.603498)
+
+[node name="bigplant" parent="destructibles/master" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.50802, 0.05, 3.79698)
+
+[node name="bigplant2" parent="destructibles/master" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.789, 0.0500002, 3.64333)
+
+[node name="bigplant3" parent="destructibles/master" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84157, 0.0500002, 0.220982)
+
+[node name="kitchen" type="Node3D" parent="destructibles"]
+
+[node name="microwave" parent="destructibles/kitchen" instance=ExtResource("16_5oeau")]
+transform = Transform3D(-0.595552, 0, -0.803317, 0, 1, 0, 0.803317, 0, -0.595552, 4.60781, 0.448406, 2.41809)
+
+[node name="coffee" parent="destructibles/kitchen" instance=ExtResource("17_qk6cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.74234, 0.42, 1.4378)
+
+[node name="plant9" parent="destructibles/kitchen" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.665079, 0.39083, 1.7643)
+
+[node name="plant3" parent="destructibles/kitchen" instance=ExtResource("19_sqs44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.559434, 0.39083, 1.6992)
+
+[node name="bigplant" parent="destructibles/kitchen" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624547, 0.39083, 1.56449)
+
+[node name="bathroom" type="Node3D" parent="destructibles"]
+
+[node name="plant5" parent="destructibles/bathroom" instance=ExtResource("18_jp0rt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57797, 0.471412, 2.68217)
+
+[node name="bigplant" parent="destructibles/bathroom" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64859, 0.0499997, 1.78817)
+
+[node name="bigplant2" parent="destructibles/bathroom" instance=ExtResource("21_hr86b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63675, 0.0499997, 0.214216)
+
+[node name="musicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("22_cbj15")
+autoplay = true

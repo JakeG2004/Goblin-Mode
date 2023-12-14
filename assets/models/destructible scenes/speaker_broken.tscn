@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgiy5gxfipydw"]
+
+[ext_resource type="PackedScene" uid="uid://cdxu82ees1cs8" path="res://assets/models/destructibles(GLB)/speaker_broken.glb" id="1_vj7ct"]
+
+[node name="speaker_broken" instance=ExtResource("1_vj7ct")]

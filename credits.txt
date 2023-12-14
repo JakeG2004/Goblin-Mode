@@ -1,2 +1,3 @@
 interior assets - https://kenney.nl/assets/furniture-kit
-https://free3d.com/3d-model/lowpoly-cat-rigged-run-animation-756268.html - cat paw maybe
+https://free3d.com/3d-model/lowpoly-cat-rigged-run-animation-756268.html - cat paw
+https://github.com/Jummit/godot-destruction-plugin - destruction code

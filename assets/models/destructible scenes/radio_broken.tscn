@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bewwcu3x71hv0"]
+
+[ext_resource type="PackedScene" uid="uid://bafrd0ifwr00o" path="res://assets/models/destructibles(GLB)/radio_broken.glb" id="1_abtp4"]
+
+[node name="radio_broken" instance=ExtResource("1_abtp4")]

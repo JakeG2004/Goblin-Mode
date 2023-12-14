@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://butv3vy4qc0gb"]
+
+[ext_resource type="PackedScene" uid="uid://r0cxrxsbqf56" path="res://assets/models/rooms/livingroom.blend" id="1_k11ld"]
+[ext_resource type="PackedScene" uid="uid://ifssfmne6ydw" path="res://assets/models/destructible scenes/pillow.tscn" id="2_tpi6t"]
+[ext_resource type="Theme" uid="uid://bdw3qlwnwn5cn" path="res://themes/character.tres" id="3_hmx0r"]
+[ext_resource type="Script" path="res://scripts/mainMenu.gd" id="4_mdqkd"]
+[ext_resource type="Script" path="res://scripts/HighScore.gd" id="5_i4avj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_npf6m"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_8dwdq"]
+sky_material = SubResource("ProceduralSkyMaterial_npf6m")
+
+[sub_resource type="Environment" id="Environment_5v0xj"]
+background_mode = 2
+sky = SubResource("Sky_8dwdq")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="livingroom" parent="." instance=ExtResource("1_k11ld")]
+
+[node name="pillow" parent="livingroom" instance=ExtResource("2_tpi6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42924, 0.28, -2.53679)
+
+[node name="pillow2" parent="livingroom" instance=ExtResource("2_tpi6t")]
+transform = Transform3D(0.784343, 0, -0.620327, 0, 1, 0, 0.620327, 0, 0.784343, 2.82248, 0.28, -2.58175)
+
+[node name="pillow3" parent="livingroom" instance=ExtResource("2_tpi6t")]
+transform = Transform3D(0.0691297, 0, -0.997608, 0, 1, 0, 0.997608, 0, 0.0691297, 2.90228, 0.28, -2.25217)
+
+[node name="pillow4" parent="livingroom" instance=ExtResource("2_tpi6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7806, 0.28, -2.65512)
+
+[node name="pillow5" parent="livingroom" instance=ExtResource("2_tpi6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38732, 0.28, -2.64033)
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env/DirectionalLight3D"]
+environment = SubResource("Environment_5v0xj")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.971681, 0.0652587, -0.227105, 0, 0.961108, 0.276174, 0.236295, -0.268353, 0.93389, 2.016, 0.48, -1.41)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_hmx0r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+script = ExtResource("4_mdqkd")
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BoxContainer" type="BoxContainer" parent="UI/CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/CenterContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="High Score" type="Button" parent="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_hmx0r")
+button_mask = 0
+text = "High Score: 0"
+script = ExtResource("5_i4avj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_hmx0r")
+text = "Start Game
+"
+
+[node name="Credits" type="Button" parent="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_hmx0r")
+text = "Credits"
+
+[node name="Exit" type="Button" parent="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_hmx0r")
+text = "Exit Game"
+
+[connection signal="pressed" from="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer/HBoxContainer/Start" to="UI/CanvasLayer" method="_on_start_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer/HBoxContainer/Credits" to="UI/CanvasLayer" method="_on_credits_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/CenterContainer/BoxContainer/VBoxContainer/HBoxContainer/Exit" to="UI/CanvasLayer" method="_on_exit_pressed"]
